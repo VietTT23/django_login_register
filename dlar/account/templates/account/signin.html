@@ -1,0 +1,40 @@
+{% extends 'account/home.html' %}
+{% block content %}
+<p>
+ <h2>SIGNIN</h2>
+</p>
+<div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <form class="form-signin" action="" method="post">
+                    {% csrf_token %}
+<!--                    <div class="alert alert-success text-center" role="alert">Register Success!</div>-->
+
+<!--                    <div class="alert alert-danger text-center" role="alert">Error !</div>-->
+
+                    <h3 class="text-center">Register</h3>
+                    <div class="form-group">
+                        <label for="username" >Username*</label>
+                        <p>{{s.user_name}}</p>
+<!--                        <input type="text" name="email" class="form-control form-control-lg" required autofocus>-->
+                    </div>
+                    <div class="form-group">
+                        <label for="password" >Password*</label>
+                        <p>{{s.user_password}}</p>
+<!--                        <input type="password"  name="password" class="form-control form-control-lg" required>-->
+                    </div>
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="rm" value="remember-me"> Nhớ mật khẩu
+                        </label>
+                    </div>
+                    <input type="submit" name="login-btn" class="btn btn-lg btn-primary btn-block" value="Login">
+                    <p>
+                        <a href="{% url 'dlar:home' %}"><i class="bi bi-arrow-left-circle"></i>Return to Home page</a>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
